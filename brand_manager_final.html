@@ -479,7 +479,7 @@ select option{background:var(--bg3);}
 <script>
 const SB_URL='https://omsdpfknlhljzgajqxdr.supabase.co';
 const SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9tc2RwZmtubGhsanpnYWpxeGRyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc1NTU1MjcsImV4cCI6MjA5MzEzMTUyN30.UOrB4o8Hd61UHXcyQPQf80rB8heWWJRHotFBAPfwe0A';
-const CLAUDE_URL='https://api.anthropic.com/v1/messages';
+const CLAUDE_URL='https://brand-api.nongs.workers.dev';
 const HEADERS_SB={'Content-Type':'application/json','apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Prefer':'return=representation'};
 
 let profile={},events=[],genCount=0;
@@ -487,7 +487,7 @@ let calDate=new Date(),calView='month',selId=null,editingId=null,curType='plan';
 let selectedTrend=null;
 
 function getApiKey(){return localStorage.getItem('bm_apikey')||'';}
-function aiHeaders(){return {'Content-Type':'application/json','x-api-key':getApiKey(),'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'};}
+function aiHeaders(){return {'Content-Type':'application/json'};}
 function saveApiKey(k){localStorage.setItem('bm_apikey',k.trim());}
 function closeApiKeyModal(){
   const k=g('apikey-input');
